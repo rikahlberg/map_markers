@@ -3,6 +3,21 @@
 // All the icons that might be used for maps are listed below
 // This code and the icons are hosted at https://github.com/wilmot/scvas_markers
 
+function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
+    var icon = new L.Icon({
+      iconUrl: `https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_${iconName}.png`,
+      shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
+      iconSize: [28, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+    var marker = L.marker(coordinates, {icon: icon});
+    marker.addTo(mymap).bindPopup(html);
+    marker.on('mouseover',function() { this.openPopup();});
+    marker.on('mouseout', function() { this.closePopup();});
+}
+
 var redIcon_dim = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_red_dim.png',
   shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
