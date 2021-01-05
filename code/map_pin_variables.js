@@ -18,6 +18,14 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
     marker.on('mouseout', function() { this.closePopup();});
 }
 
+var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_red.png',
+  shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
+  iconSize: [28, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+}); 
 var redIcon_dim = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_red_dim.png',
   shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
