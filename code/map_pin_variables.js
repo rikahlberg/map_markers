@@ -15,7 +15,7 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
     var marker = L.marker(coordinates, {icon: icon});
     marker.addTo(mymap).bindPopup(html);
     marker.on('mouseover',function() { this.openPopup();});
-    marker.on('mouseout', function() { this.closePopup();});
+//    marker.on('mouseout', function() { this.closePopup();});
 }
 
 var redIcon = new L.Icon({
