@@ -33,9 +33,9 @@ function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0) {
 }
 
 // Create the map and set its [Latitude, Longitude] and Zoom. Larger numbers zoom in; smaller zoom out.
-function setUpMap(coordinates, zoom = 12) {
+function setUpMap(coordinates, zoom = 12, delta = 0.25) {
    var map = L.map('mapid', {
-      zoomDelta: 0.25,
+      zoomDelta: delta,
       zoomSnap: 0
    }).setView(coordinates, zoom);
    
