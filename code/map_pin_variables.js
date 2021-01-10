@@ -3,6 +3,8 @@
 // All the icons that might be used for maps are listed below
 // This code and the icons are hosted at https://github.com/wilmot/scvas_markers
 
+// Place a pin on a map
+// Example: pin([37.313167, -122.063596], "<b>McClellan Ranch Parking</b>", "parking")
 function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
     var icon = new L.Icon({
       iconUrl: `https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_${iconName}.png`,
@@ -16,6 +18,18 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
     marker.addTo(mymap).bindPopup(html);
     marker.on('mouseover',function() { this.openPopup();});
 //    marker.on('mouseout', function() { this.closePopup();});
+}
+
+// Tweak the zoom of the map for desktop vs mobile
+function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0) {
+    if (map.getSize().x > 600) { // Probably desktop
+      map.zoomIn(firstzoom);
+    }
+    else { // Probably mobile or otherwise narrow screen
+      if (secondzoom > 0) {
+        map.zoomIn(secondzoom);
+      }
+    }
 }
 
 var redIcon = new L.Icon({
