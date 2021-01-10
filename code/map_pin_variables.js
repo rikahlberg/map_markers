@@ -23,7 +23,7 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
 }
 
 // Tweak the zoom of the map for desktop vs mobile
-function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0, delta = 0.5) {
+function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 1, delta = 0.5) {
     map.options.zoomDelta = delta
     if (map.getSize().x > 600) { // Probably desktop
       map.zoomIn(firstzoom);
