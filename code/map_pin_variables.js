@@ -3,7 +3,7 @@
 // All the icons that might be used for maps are listed below
 // This code and the icons are hosted at https://github.com/wilmot/scvas_markers
 
-var version = 20210109;
+var version = "20210109.1";
 
 // Place a pin on a map
 // Example: pin([37.313167, -122.063596], "<b>McClellan Ranch Parking</b>", "parking")
