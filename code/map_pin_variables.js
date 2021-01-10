@@ -3,7 +3,7 @@
 // All the icons that might be used for maps are listed below
 // This code and the icons are hosted at https://github.com/wilmot/scvas_markers
 
-var version = "20210109.2";
+var version = "20210109.3";
 
 // Place a pin on a map
 // Example: pin([37.313167, -122.063596], "<b>McClellan Ranch Parking</b>", "parking")
@@ -26,7 +26,9 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
 function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 1, delta = 0.5) {
     map.options.zoomDelta = delta
     if (map.getSize().x > 600) { // Probably desktop
-      map.zoomIn(firstzoom);
+      if (firstzoom > 0) {
+        map.zoomIn(firstzoom);
+      }
     }
     else { // Probably mobile or otherwise narrow screen
       if (secondzoom > 0) {
