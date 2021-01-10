@@ -32,6 +32,21 @@ function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0) {
     }
 }
 
+// Create the map and set its [Latitude, Longitude] and Zoom. Larger numbers zoom in; smaller zoom out.
+function setUpMap(coordinates, zoom = 12) {
+   var map = L.map('mapid', {
+      zoomDelta: 0.25,
+      zoomSnap: 0
+   }).setView(coordinates, zoom);
+   
+   // Where the map tiles come from, whether to show a Kilometers/Miles scale, and a handy function for making map pins. Generally don't change this
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(map);
+   L.control.scale().addTo(map);
+
+   fineTuneMapZoom(map);
+   return map;
+};
+
 var redIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_red.png',
   shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
