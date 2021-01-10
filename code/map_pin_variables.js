@@ -21,7 +21,8 @@ function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
 }
 
 // Tweak the zoom of the map for desktop vs mobile
-function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0) {
+function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0, delta = 0.5) {
+    map.options.zoomDelta = delta
     if (map.getSize().x > 600) { // Probably desktop
       map.zoomIn(firstzoom);
     }
@@ -33,7 +34,7 @@ function fineTuneMapZoom(map, firstzoom = 1, secondzoom = 0) {
 }
 
 // Create the map and set its [Latitude, Longitude] and Zoom. Larger numbers zoom in; smaller zoom out.
-function setUpMap(coordinates, zoom = 12, delta = 0.25) {
+function setUpMap(coordinates, zoom = 12, delta = 0.5) {
    var map = L.map('mapid', {
       zoomDelta: delta,
       zoomSnap: 0
