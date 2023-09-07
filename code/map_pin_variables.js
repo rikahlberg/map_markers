@@ -9,8 +9,8 @@ var version = "20210109.3";
 // Example: pin([37.313167, -122.063596], "<b>McClellan Ranch Parking</b>", "parking")
 function pin(coordinates, html = "<b>New Pin</b>", iconName = "no_number") {
     var icon = new L.Icon({
-      iconUrl: `https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_${iconName}.png`,
-      shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
+     iconUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_${iconName}.png',
+        shadowUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_shadow.png',
       iconSize: [28, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
@@ -148,8 +148,8 @@ var greyIcon_dim = new L.Icon({
   shadowSize: [41, 41]
 });
 var icon1 = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_1.png',
-  shadowUrl: 'https://raw.githubusercontent.com/wilmot/scvas_markers/master/img/scvas_pin_shadow.png',
+  iconUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_31.png',
+  shadowUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_shadow.png',
   iconSize: [28, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
