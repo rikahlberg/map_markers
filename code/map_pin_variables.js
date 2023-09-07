@@ -148,7 +148,7 @@ var greyIcon_dim = new L.Icon({
   shadowSize: [41, 41]
 });
 var icon1 = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_31.png',
+  iconUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_1.png',
   shadowUrl: 'https://raw.githubusercontent.com/rikahlberg/map_markers/master/img/scvas_pin_shadow.png',
   iconSize: [28, 41],
   iconAnchor: [12, 41],
